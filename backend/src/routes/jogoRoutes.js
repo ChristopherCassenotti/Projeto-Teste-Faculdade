@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const c = require('../controllers/pessoaController');
+const c = require('../controllers/jogoController');
 
 router.get('/', c.listar);
 router.get('/:id', c.buscar);

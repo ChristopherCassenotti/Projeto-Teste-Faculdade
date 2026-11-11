@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const c = require('../controllers/cidadeController');
+const c = require('../controllers/generoController');
 
 router.get('/', c.listar);
 router.post('/', c.criar);
