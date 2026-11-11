@@ -1,6 +1,6 @@
-# Cadastro de Pessoas
+# Cadastro de Jogos
 
-CRUD com **Backend** (Node, Express, Sequelize, Swagger, PostgreSQL) e **Frontend** (React, React Router).
+CRUD de jogos com **Backend** (Node, Express, Sequelize, Swagger, PostgreSQL) e **Frontend** (React, React Router).
 
 - `backend/`  API em MVC (models, controllers, routes)
 - `frontend/` Interface React (components, pages, services, docs)
@@ -13,7 +13,4 @@ CRUD com **Backend** (Node, Express, Sequelize, Swagger, PostgreSQL) e **Fronten
    API em http://localhost:3000 e Swagger em http://localhost:3000/api-docs
 3. Frontend: `cd frontend`, `npm install` e `npm run dev`. Acesse http://localhost:5173
 
-O banco tem duas tabelas: `cidades` e `pessoas` (cada pessoa pertence a uma cidade).
-
-## GitHub Projects
-Quadro com colunas: A fazer, Em andamento, Testes, Concluído.
+O banco tem duas tabelas: `generos` e `jogos` (cada jogo pertence a um gênero).

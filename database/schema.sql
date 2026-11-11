@@ -1,8 +1,7 @@
 -- Rode no pgAdmin (Query Tool) conectado ao banco "cadastro"
 -- Criar o banco antes: CREATE DATABASE cadastro;
 
--- Se voce ja tinha criado as tabelas antigas, descomente a linha abaixo:
--- DROP TABLE IF EXISTS pessoas, cidades;
+DROP TABLE IF EXISTS pessoas, cidades;
 
 CREATE TABLE IF NOT EXISTS generos (
   id SERIAL PRIMARY KEY,
