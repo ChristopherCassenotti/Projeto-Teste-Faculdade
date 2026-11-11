@@ -1,28 +1,31 @@
 -- Rode no pgAdmin (Query Tool) conectado ao banco "cadastro"
 -- Criar o banco antes: CREATE DATABASE cadastro;
 
-CREATE TABLE IF NOT EXISTS cidades (
+-- Se voce ja tinha criado as tabelas antigas, descomente a linha abaixo:
+-- DROP TABLE IF EXISTS pessoas, cidades;
+
+CREATE TABLE IF NOT EXISTS generos (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
-  uf CHAR(2) NOT NULL,
   "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS pessoas (
+CREATE TABLE IF NOT EXISTS jogos (
   id SERIAL PRIMARY KEY,
-  nome VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  telefone VARCHAR(255),
-  "cidadeId" INTEGER REFERENCES cidades(id) ON DELETE SET NULL,
+  titulo VARCHAR(255) NOT NULL,
+  plataforma VARCHAR(255) NOT NULL,
+  ano INTEGER,
+  "generoId" INTEGER REFERENCES generos(id) ON DELETE SET NULL,
   "createdAt" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updatedAt" TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- Dados de teste
-INSERT INTO cidades (nome, uf) VALUES
-  ('São Paulo', 'SP'), ('Rio de Janeiro', 'RJ'), ('Belo Horizonte', 'MG'), ('Curitiba', 'PR');
+INSERT INTO generos (nome) VALUES
+  ('Ação'), ('Aventura'), ('RPG'), ('Esporte'), ('Corrida'), ('Estratégia');
 
-INSERT INTO pessoas (nome, email, telefone, "cidadeId") VALUES
-  ('Maria Silva', 'maria@email.com', '11999999999', 1),
-  ('João Souza', 'joao@email.com', '21988888888', 2);
+INSERT INTO jogos (titulo, plataforma, ano, "generoId") VALUES
+  ('The Witcher 3', 'PC', 2015, 3),
+  ('God of War', 'PlayStation', 2018, 1),
+  ('Forza Horizon 5', 'Xbox', 2021, 5);
