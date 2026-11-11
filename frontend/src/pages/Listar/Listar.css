@@ -1,0 +1,2 @@
+.tabela { width: 100%; border-collapse: collapse; background: white; margin-top: 16px; }
+.tabela th, .tabela td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
